@@ -1,0 +1,44 @@
+:host {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    width: 100vw;
+  }
+
+.converter {
+    background-color: white;
+    width: 50vw;
+    height: 50vh;
+    padding: 50px;
+    border-radius: 20px;
+}
+
+.form {
+    margin-top: 20px;
+}
+
+h1 {
+    text-align: center;
+    font-size: 30px;
+    margin-bottom: 50px;
+}
+
+input {
+    height: 20px;
+}
+
+select, button {
+    height: 26px;
+}
+
+button {
+    margin-left: 10px;
+    color: white;
+    background-color: #272635;
+    border: none;
+}
+
+label {
+    margin-right: 20px;
+}

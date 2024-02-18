@@ -1,0 +1,29 @@
+<div class="converter">
+  <h1>Euro / US Dollar converter</h1>
+  <h2>Real exchange rate : EUR/USD = {{ currentRate }} </h2>
+  <form [formGroup]="rateForm" (submit)="updateRate()">
+    <label for="rate-input">Force an exchange rate:</label>
+    <input id="rate-input" type="number" placeholder="Enter exchange rate" formControlName="rate">
+    <button type="submit">Force</button>
+  </form>
+  <div class="form">
+    <form [formGroup]="converterForm" (submit)="convertAmount()">
+      <input type="number" placeholder="Enter amount" formControlName="amount">
+      <select formControlName="baseCurrency">
+        <option value="EUR">EUR</option>
+        <option value="USD">USD</option>
+      </select>
+      <button type="submit">Convert</button>
+    </form>
+    <h3>Result: {{ convertedValue }}  {{ targetCurrency }} <span *ngIf="fixedRate != null">Fixed rate is active.</span> </h3>
+  </div>
+  <div *ngIf="history.length > 0">
+    <h3>Last 5 conversion requests :</h3>
+    <ul>
+      <li *ngFor="let entry of history">
+        {{ entry.amount }} {{ entry.baseCurrency }} = {{ entry.convertedValue }} {{ entry.targetCurrency }} Real exchange rate: {{ entry.exchangeRate }}, Fixed exchange rate: {{ entry.fixedRate }}
+      </li>
+    </ul>
+  </div>
+</div>
+  
